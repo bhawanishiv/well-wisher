@@ -28,8 +28,8 @@ export default function QuizAction({
             disabled={prevDisabled}
             onClick={onPrev}
             className={cn(
-              "mr-3 px-6 py-3 rounded-full",
-              prevDisabled ? "text-muted" : "bg-primary"
+              "mr-3 px-12 py-3 rounded-full",
+              prevDisabled ? "text-muted bg-muted-dark" : "bg-primary"
             )}
           >
             Prev
@@ -39,8 +39,8 @@ export default function QuizAction({
             disabled={nextDisabled}
             onClick={endReached ? onSubmit : onNext}
             className={cn(
-              "ml-3 px-6 py-3 rounded-full",
-              nextDisabled ? "text-muted" : "bg-primary"
+              "ml-3 px-12 py-3 rounded-full",
+              nextDisabled ? "text-muted bg-muted-dark" : "bg-primary"
             )}
           >
             {endReached ? "Submit" : "Next"}

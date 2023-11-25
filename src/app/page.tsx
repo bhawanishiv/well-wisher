@@ -55,7 +55,7 @@ const items = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen p-6 md:p-32">
+    <main className="min-h-screen p-6 md:px-32 md:py-16">
       <Quiz items={items} />
     </main>
   );

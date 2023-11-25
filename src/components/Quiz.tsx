@@ -128,6 +128,8 @@ export default function Quiz({ items }: QuizProps) {
           </div>
         </div>
         <QuizItem
+          // Passing key so that is resets the internal state
+          key={index + 1}
           serial={index + 1}
           item={item.title}
           hint={item.hint}

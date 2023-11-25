@@ -8,8 +8,8 @@
   --background-end-rgb: 255, 255, 255;
 
   --color-primary: 0, 120, 212;
-  --color-muted: 135, 135, 135;
-
+  --color-muted: 62, 62, 62;
+  --color-muted-dark: 11, 11, 11;
 }
 
 @media (prefers-color-scheme: dark) {
