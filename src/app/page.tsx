@@ -26,30 +26,30 @@ const items = [
   {
     title: `What is the password of inflolabs kubernates application?`,
     options: [
+      "I can go and check",
       "Why do I put it here",
       "I no more work at that hell",
-      "I can go and check",
       `I_Love_Naresh's_Smile_123`,
     ],
     hint: `All is well`,
-    answer: 1,
+    answer: 2,
   },
   {
     title: `Why is Varun gay?`,
     options: [
-      `!Because he is`,
+      `I don’t think he is`,
       `Nature’s gift`,
       `Because he is`,
-      `I don’t think he is`,
+      `Because he is!`,
     ],
     hint: `I won't hint you always`,
-    answer: 0,
+    answer: 3,
   },
   {
     title: `What is your revidd ESOP value?`,
-    options: [`Null`, `- Your salary`, `Undefined`, `Kiran is a Hackerman`],
+    options: [`- Your salary`, `= Hackerman`, `Null`, `Undefined`],
     hint: `So many developers left the company.`,
-    answer: 3,
+    answer: 1,
   },
 ];
 

@@ -78,35 +78,37 @@ export default function Quiz({ items }: QuizProps) {
 
   const renderQuiz = () => {
     if (isSubmitted) {
-      let response =
-        score >= 80 ? `Hurrah! You're still a Nibba.` : "Oh God! You a Nibba.";
+      let response = "Oh no! I want you to try again.";
+
+      if (score >= 100) {
+        response = `Damn! you got the thing, But you're still a Nibba.\nHappy Birthday Mr. Vamshi!`;
+      } else if (score >= 80) {
+        response = `You won! You must be feeling coming out of a hell.\n\nHappy Birthday Mr. Vamshi!`;
+      }
+
       return (
         <div>
           <div>
-            <h2>{response}</h2>
+            <h2 className="whitespace-pre-line mb-2">{response}</h2>
             You have scored{" "}
             <span className="text-primary text-xl">{score}%</span> in this quiz.
           </div>
           <div className="pt-6">
+            {score >= 100 ? (
+              <Image
+                src="/vamshi-birthday-wall.jpg"
+                alt="Nibba"
+                width="640"
+                height="320"
+                className="rounded-sm"
+              />
+            ) : null}
             {score >= 80 ? (
-              <>
-                <Image
-                  src="/vamshi-birthday-wall.jpg"
-                  alt="Nibba"
-                  width="640"
-                  height="320"
-                  className="rounded-sm"
-                />
-                <div className="pt-6">
-                  <Link
-                    href="/"
-                    className="text-primary"
-                    onClick={handleSeeGift}
-                  >
-                    See your gift here
-                  </Link>
-                </div>
-              </>
+              <div className="pt-6">
+                <Link href="/" className="text-primary" onClick={handleSeeGift}>
+                  See your gift here
+                </Link>
+              </div>
             ) : (
               <button className="text-primary" onClick={handleRetry}>
                 Retry
