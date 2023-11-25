@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import QuizItem from "./QuizItem";
 import QuizAction from "./QuizAction";
 import Link from "next/link";
@@ -88,9 +89,24 @@ export default function Quiz({ items }: QuizProps) {
           </div>
           <div className="pt-6">
             {score >= 80 ? (
-              <Link href="/" className="text-primary" onClick={handleSeeGift}>
-                See your gift here
-              </Link>
+              <>
+                <Image
+                  src="/vamshi-birthday-wall.jpg"
+                  alt="Nibba"
+                  width="640"
+                  height="320"
+                  className="rounded-sm"
+                />
+                <div className="pt-6">
+                  <Link
+                    href="/"
+                    className="text-primary"
+                    onClick={handleSeeGift}
+                  >
+                    See your gift here
+                  </Link>
+                </div>
+              </>
             ) : (
               <button className="text-primary" onClick={handleRetry}>
                 Retry
