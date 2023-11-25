@@ -35,17 +35,18 @@ export default function Quiz({ items }: QuizProps) {
   };
 
   const calculateScore = () => {
-    const { answer } = items[index];
-    const selectedValue = selectedValues[index];
-    let nextScore = score;
-    if (answer === selectedValue) {
-      const scoreDec = (index + 1) / items.length;
-      nextScore = Math.round(scoreDec * 100);
+    let correctAnswers = 0;
+
+    for (let i = 0; i < items.length; i++) {
+      const { answer } = items[i];
+      const selectedValue = selectedValues[i];
+      if (answer === selectedValue && typeof selectedValue !== "undefined") {
+        correctAnswers += 1;
+      }
     }
 
-    setScore(nextScore);
-
-    return nextScore;
+    const scorePerc = (correctAnswers / items.length) * 100;
+    setScore(scorePerc);
   };
 
   const handleNext = () => {
